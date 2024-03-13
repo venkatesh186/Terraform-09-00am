@@ -1,71 +1,45 @@
 #create VPC
-resource "aws_vpc" "dev"{
-    cidr_block = "10.0.0.0/16"
-    tags = {
-        Name = "Dev VPC"
-    } 
+resource "aws_vpc" "dev" {
+cidr_block = "10.0.0.0/16"
+tags={
+    Name = "dev"
+}  
 }
-#create IG and attach to VPC
+#create internet gateway and attach to vpc
 resource "aws_internet_gateway" "dev" {
-    vpc_id = aws_vpc.dev.id
+    vpc_id = aws_vpc.dev.id #IG attach block to vpc
   
 }
 
 #create subnets
-
 resource "aws_subnet" "dev" {
     cidr_block = "10.0.0.0/24"
-    vpc_id = aws_vpc.dev.id
-    map_public_ip_on_launch = true
+    vpc_id = aws_vpc.dev.id #subnet attach block yo vpc
   
 }
 
-#create route table and provide path IG to RT (edit routes)
+
+#cretae Route tables & attach internet gateway to Rt
+
 resource "aws_route_table" "dev" {
     vpc_id = aws_vpc.dev.id
     route {
     cidr_block = "0.0.0.0/0"
-    gateway_id = aws_internet_gateway.dev.id
-    
+    gateway_id = aws_internet_gateway.dev.id #attache block ig to rt
+     
   }
   
 }
-#associate  RT to subnet
-resource "aws_route_table_association" "dev" {
-    route_table_id = aws_route_table.dev.id
-    subnet_id = aws_subnet.dev.id
-    
+#subent associations
+resource "aws_route_table_association" "name" {
+    route_table_id = aws_route_table.dev.id #rout table association rt attach
+    subnet_id = aws_subnet.dev.id #rt association to subnet
   
 }
-resource "aws_security_group" "allow_tls" {
-  name        = "allow_tls"
-  vpc_id      = aws_vpc.dev.id
-  tags = {
-    Name = "dev_sg"
-  }
- ingress {
-    description      = "TLS from VPC"
-    from_port        = 80
-    to_port          = 80
-    protocol         = "tcp"
-    cidr_blocks      = ["0.0.0.0/0"]
-    
-  }
-ingress {
-    description      = "TLS from VPC"
-    from_port        = 22
-    to_port          = 22
-    protocol         = "TCP"
-    cidr_blocks      = ["0.0.0.0/0"]
-    
-  }
-egress {
-    from_port        = 0
-    to_port          = 0
-    protocol         = "-1"
-    cidr_blocks      = ["0.0.0.0/0"]
-    
-  }
 
 
-  }
+
+  
+
+
+
