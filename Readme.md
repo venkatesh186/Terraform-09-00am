@@ -161,7 +161,7 @@ variable "filename" {
 
 - This command will initialize the working directory containing Terraform configuration files and install any required plugins.
 ```
-terraform init
+terraform init 
 ```
 - This command lets you preview the actions Terraform would take to modify your infrastructure or save a speculative plan which you can apply later.
 ```
