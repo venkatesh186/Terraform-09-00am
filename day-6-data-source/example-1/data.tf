@@ -23,6 +23,7 @@ data "aws_ami" "amzlinux" {
 
 
 
+# not recomanded 
 
 data "aws_security_group" "dev" {
   id = "sg-00b0d7dae135e9bbf" #here change your sg id details"
