@@ -14,6 +14,7 @@ resource "aws_internet_gateway" "dev" {
 #create subnets
 resource "aws_subnet" "dev" {
     cidr_block = "10.0.0.0/24"
+    availability_zone = "ap-south-1a"
     vpc_id = aws_vpc.dev.id #subnet attach block yo vpc
   
 }
