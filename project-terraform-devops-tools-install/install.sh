@@ -26,9 +26,9 @@ sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/AmazonLinu
 sudo yum -y install terraform
 
 #---------------------------------install tomcat------------------
-#sudo wget url https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.83/bin/apache-tomcat-9.0.83.tar.gz
-#sudo tar -xvzf apache-tomcat-9.0.83.tar.gz #untar
-#cd apache-tomcat-9.0.83
+#sudo wget url https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.93/bin/apache-tomcat-9.0.93.tar.gz
+#sudo tar -xvzf apache-tomcat-9.0.93.tar.gz #untar
+#cd apache-tomcat-9.0.93
 #cd bin
 #chmod +x startup.sh
 
