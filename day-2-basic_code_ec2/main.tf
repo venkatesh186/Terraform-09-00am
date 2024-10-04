@@ -7,3 +7,6 @@ resource "aws_instance" "test" {
       Name = "dev_ec2"
     }
 }
+
+provider "aws" {
+   region = "ap-south-1"
