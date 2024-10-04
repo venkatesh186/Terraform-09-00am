@@ -13,8 +13,4 @@ variable "key_name" {
     default = ""
   
 }
-variable "avaialbility_zone" {
-type = string
-default = ""
-description = "passing AMI value to main.tf"
 
