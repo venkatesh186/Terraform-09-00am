@@ -1,15 +1,16 @@
-variable "ami_id" {
-    description = "passing AMI vlaue to  main.tf"
+variable "ami" {
+    description = "passing ami value"
     type = string
     default = ""
   
 }
 variable "instance_type" {
-  type = string
-  default = ""
+    type = string
+    default = ""
+  
 }
 variable "key_name" {
     type = string
     default = ""
+  
 }
-
