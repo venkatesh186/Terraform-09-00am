@@ -1,7 +1,8 @@
-variable "ami" {
-    description = "passing ami value"
-    type = string
-    default = ""
+variable "ami_id" {
+  description = "The AMI ID for the EC2 instance"
+  type        = string
+}
+
   
 }
 variable "instance_type" {
