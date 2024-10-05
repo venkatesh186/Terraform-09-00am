@@ -1,5 +1,5 @@
 resource "aws_instance" "test" {
-    ami = var.ami_id
+    ami = var.ami
     instance_type = var.instance_type
     key_name = var.key_name
     tags = {
