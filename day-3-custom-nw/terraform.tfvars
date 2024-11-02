@@ -1,3 +1,3 @@
-ami_id = "ami-068e0f1a600cd311c"
+ami_id = "ami-06b21ccaeff8cd686"
 instance_type = "t2.micro"
-key_name = "venkatesulu"
+key_name = "venky"
