@@ -1,4 +1,4 @@
-ami_id = "ami-078264b8ba71bc45e"
+ami_id = "ami-063d43db0594b521b"
 instance_type = "t2.micro"
-key_name = "hussain"
+key_name = "ram"
 
