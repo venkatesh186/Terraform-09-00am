@@ -1,6 +1,6 @@
 variable "ami" {
   type    = string
-  default = "ami-0440d3b780d96b29d"
+  default = "ami-063d43db0594b521b"
 }
 
 variable "instance_type" {
@@ -22,4 +22,8 @@ resource "aws_instance" "sandbox" {
   tags = {
     Name = each.value # for a set, each.value and each.key is the same
   }
+}
+provider "aws" {
+    region = "us-east-1"
+  
 }
